@@ -32,13 +32,14 @@ class SimpleNN(nn.Module):
     def __init__(self):
         super(SimpleNN, self).__init__()
         self.fc1 = nn.Linear(input_size, hidden_size)  # Перший шар
-        self.fc2 = nn.Linear(hidden_size, num_classes)  # Другий шар
+        self.fc2 = nn.Linear(hidden_size, hidden_size)  # Другий шар
         self.fc3 = nn.Linear(hidden_size, num_classes)  # Третій шар
 
     def forward(self, x):
         x = x.view(-1, input_size)  # Перетворення зображення в вектор
         x = torch.relu(self.fc1(x))  # Активація ReLU для прихованого шару
         x = self.fc2(x)  # Прямий прохід через вихідний шар
+        x = self.fc3(x)  # Прямий прохід через вихідний шар
         return x
 
 # Ініціалізуємо модель, втрачену функцію та оптимізатор

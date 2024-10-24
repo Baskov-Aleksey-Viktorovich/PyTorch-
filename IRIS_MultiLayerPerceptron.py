@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from sklearn import datasets
+from sklearn import dataset
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
@@ -63,4 +63,3 @@ with torch.no_grad():
     outputs = model(X_test_tensor)
     _, predicted = torch.max(outputs.data, 1)  # Вибір класу з найбільшою ймовірністю
     accuracy = accuracy_score(y_test, predicted.numpy())
-    print(f'Accuracy: {accuracy * 100:.2f}%')
