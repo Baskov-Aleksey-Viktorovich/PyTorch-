@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 # Генерація даних для варіанту B
 X = np.linspace(0, 25, 100)
-#Y = X**3 / 125 - 2 * X**2 - 10
-Y = np.cos(X) * X / (X + 1) + np.random.normal(0, 0.05, size=X.shape)  # реальні дані з шумом для варіанту B
+Y = X**3 / 125 - 2 * X**2 - 10
+#Y = np.cos(X) * X / (X + 1) + np.random.normal(0, 0.05, size=X.shape)  # реальні дані з шумом для варіанту B
 X = X.reshape(-1, 1)
 Y = Y.reshape(-1, 1)
 
